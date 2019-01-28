@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="rptbarang" language="groovy" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20">
+	<property name="ireport.zoom" value="0.9090909090909091"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="10"/>
+	<queryString language="SQL">
+		<![CDATA[SELECT
+     tbbarang.`Idbarang` AS tbbarang_Idbarang,
+     tbbarang.`Namabarang` AS tbbarang_Namabarang,
+     tbbarang.`SATUAN` AS tbbarang_SATUAN,
+     tbbarang.`Alamatbarang` AS tbbarang_Alamatbarang,
+     tbbarang.`Storage` AS tbbarang_Storage,
+     tbbarang.`Deskripsi` AS tbbarang_Deskripsi
+FROM
+     `tbbarang` tbbarang]]>
+	</queryString>
+	<field name="tbbarang_Idbarang" class="java.lang.String"/>
+	<field name="tbbarang_Namabarang" class="java.lang.String"/>
+	<field name="tbbarang_SATUAN" class="java.lang.String"/>
+	<field name="tbbarang_Alamatbarang" class="java.lang.String"/>
+	<field name="tbbarang_Storage" class="java.lang.String"/>
+	<field name="tbbarang_Deskripsi" class="java.lang.String"/>
+	<group name="tbbarang_Idbarang">
+		<groupExpression><![CDATA[$F{tbbarang_Idbarang}]]></groupExpression>
+	</group>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="79" splitType="Stretch">
+			<staticText>
+				<reportElement x="221" y="11" width="157" height="20"/>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[LAPORAN DATA BARANG]]></text>
+			</staticText>
+			<textField pattern="MMMMM-yy">
+				<reportElement x="267" y="31" width="111" height="20"/>
+				<textElement/>
+				<textFieldExpression class="java.util.Date"><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="221" y="31" width="41" height="20"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Periode :]]></text>
+			</staticText>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="35" splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="26" splitType="Stretch">
+			<rectangle>
+				<reportElement x="0" y="2" width="555" height="20" backcolor="#999999"/>
+			</rectangle>
+			<staticText>
+				<reportElement x="0" y="2" width="51" height="20"/>
+				<textElement/>
+				<text><![CDATA[Id Barang]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="51" y="2" width="167" height="20"/>
+				<textElement/>
+				<text><![CDATA[Nama barang]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="218" y="2" width="60" height="20"/>
+				<textElement/>
+				<text><![CDATA[satuan]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="278" y="2" width="100" height="20"/>
+				<textElement/>
+				<text><![CDATA[alamat]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="378" y="2" width="61" height="20"/>
+				<textElement/>
+				<text><![CDATA[Storage]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="439" y="2" width="111" height="20"/>
+				<textElement/>
+				<text><![CDATA[Deskripsi]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="30" splitType="Stretch">
+			<textField>
+				<reportElement x="0" y="5" width="51" height="20"/>
+				<textElement/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{tbbarang_Idbarang}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="51" y="6" width="167" height="20"/>
+				<textElement/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{tbbarang_Namabarang}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="218" y="5" width="60" height="20"/>
+				<textElement/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{tbbarang_SATUAN}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="281" y="5" width="97" height="20"/>
+				<textElement/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{tbbarang_Alamatbarang}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="378" y="5" width="61" height="20"/>
+				<textElement/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{tbbarang_Storage}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="439" y="6" width="111" height="20"/>
+				<textElement/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{tbbarang_Deskripsi}]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement x="6" y="25" width="544" height="1"/>
+			</line>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="79" splitType="Stretch">
+			<staticText>
+				<reportElement x="378" y="0" width="61" height="20"/>
+				<textElement/>
+				<text><![CDATA[Tangerang,]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="439" y="59" width="100" height="20"/>
+				<textElement/>
+				<text><![CDATA[MUHAMMAD UTFI]]></text>
+			</staticText>
+			<textField pattern="MMMMM dd, yyyy">
+				<reportElement x="439" y="0" width="111" height="20"/>
+				<textElement/>
+				<textFieldExpression class="java.util.Date"><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+		</band>
+	</columnFooter>
+	<pageFooter>
+		<band height="54" splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band height="42" splitType="Stretch"/>
+	</summary>
+</jasperReport>
